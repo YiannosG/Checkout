@@ -1,0 +1,17 @@
+﻿1. Created ASP.NET Project on Visual Studio 15 Enterprise
+2. Used MVC template, and created unit tests and Git directory
+3. Created Services project and added it to the solution.
+4. Created Entities project and added it to the solution.
+5. Added reference to the Service project to the main Web project.
+6. Added Item class in Entities project. Represents the main store item object.
+7. Added ICheckout interface to Services. Represents the main Checkout service.
+8. Added Moq mocking library through Nuget. Moq will mock the ICheckout service in the HomeControllerTest unit test class
+9. Added references to the Services and Entities projects to the Test project.
+10. The TestCleanup method, runs after each unit test and verifies any mock contact service setup.
+11. HomeController now needs a constructor that takes a ICheckout service instance.
+12. Index_ExpectViewResultReturned method in the HomeControllerTest class implemented.
+13. Mock out a call to a GetAllItems method on the mock checkout service, which should return a bunch of stubItems.
+14. Create the expected viewmodel from the stub items.
+15. Call the Index action on the controller.
+16. Get the view model created from the Index action and casting it as a List<ItemViewModel>.
+17. Last thing to do, is to loop over the expected item view models and assert that the actual view models are the same.
